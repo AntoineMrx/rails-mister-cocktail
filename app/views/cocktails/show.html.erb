@@ -3,7 +3,15 @@
 <p>
   <strong>Name:</strong>
   <%= @cocktail.name %>
+    <strong>Recipe:</strong>
+  <ol><% @doses.each do |dose| %>
+    <li><%= dose.ingredient.name %>: <%= dose.description %></li>
+    <% end %>
+  </ol>
+
 </p>
 
+
+<%= link_to 'Create Dose', new_cocktail_dose_path(@cocktail) %> |
 <%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
 <%= link_to 'Back', cocktails_path %>

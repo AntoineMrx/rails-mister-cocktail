@@ -10,6 +10,7 @@ class CocktailsController < ApplicationController
   # GET /cocktails/1
   # GET /cocktails/1.json
   def show
+    @doses = @cocktail.doses
   end
 
   # GET /cocktails/new
@@ -19,6 +20,8 @@ class CocktailsController < ApplicationController
 
   # GET /cocktails/1/edit
   def edit
+    @dose = Dose.new
+    @doses = @cocktail.doses
   end
 
   # POST /cocktails
