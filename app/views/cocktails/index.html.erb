@@ -1,23 +1,30 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+<div class="cards">
 
-<div class='row'>
  <% @cocktails.each do |cocktail| %>
-<div class="col-xs-12 col-md-4">
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= asset_path('cocktail.jpeg') %>);">
+ <div class="card">
+<div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.path, height: 300, width: 400, crop: :fill if cocktail.photo %>');">
  <!--  <div class="card-category">Popular</div> -->
-  <div class="card-description">
-    <h2><%= cocktail.name%></h2>
-    <ol><% cocktail.doses.each do |dose| %></ol>
+  <div class="card-category">
+    <span><%= cocktail.name%></span>
+    </div>
+    <!-- <ol><% cocktail.doses.each do |dose| %></ol>
       <li><%= dose.ingredient.name %></li>
-      <% end %>
-  </div>
+      <% end %> -->
+
+
 </div>
+<div class="card-footer">
+<%= link_to "#{image_tag("zoom.png", size: "22x22")}".html_safe, cocktail_path(cocktail) %>
+</div>
+
+
 </div>
 <% end %>
 </div>
-
+</div>
 
 <div style="text-align: center">
 <%= link_to 'New Cocktail', new_cocktail_path, class: "btn-yours" %>
 </div>
-

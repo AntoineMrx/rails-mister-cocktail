@@ -1,8 +1,8 @@
 .btn-yours{
-border: 1px solid $blue;
+border: 2px solid $light-gray;
 border-radius: 20px;
 padding: 15px 25px;
-color: $blue;
+color: $light-gray;
 font-weight: lighter;
 transition: background 0.3s ease;
 }
@@ -10,9 +10,8 @@ transition: background 0.3s ease;
 
 .btn-yours:hover {
     opacity: 1;
-    background: $blue;
+    background: #595857;
     text-decoration: none;
     color: white;
 }
-
 

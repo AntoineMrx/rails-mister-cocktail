@@ -7,6 +7,10 @@ end
 
 ruby '2.3.5'
 
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'carrierwave', '~> 0.11.2'
+gem 'jquery-fileupload-rails'
+gem 'cloudinary', '1.1.7'
 gem 'figaro'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
