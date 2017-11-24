@@ -1,45 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cocktails</h1>
-
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cocktails.each do |cocktail| %>
-      <tr>
-        <td><%= cocktail.name %></td>
-        <td><%= link_to 'Show', cocktail %></td>
-        <td><%= link_to 'Edit', edit_cocktail_path(cocktail) %></td>
-        <td><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br> -->
 <div class='row'>
  <% @cocktails.each do |cocktail| %>
-<div class="col-xs-12 col-s-4 col-md-3">
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+<div class="col-xs-12 col-md-4">
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= asset_path('cocktail.jpeg') %>);">
  <!--  <div class="card-category">Popular</div> -->
   <div class="card-description">
     <h2><%= cocktail.name%></h2>
     <ol><% cocktail.doses.each do |dose| %></ol>
       <li><%= dose.ingredient.name %></li>
       <% end %>
-   <!--  <p>Very cool city, the best</p> -->
   </div>
- <!--  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-  <a class="card-link" href="#" ></a> -->
 </div>
 </div>
 <% end %>
-
 </div>
-<%= link_to 'New Cocktail', new_cocktail_path %>
+
+
+<div style="text-align: center">
+<%= link_to 'New Cocktail', new_cocktail_path, class: "btn-yours" %>
+</div>
+
